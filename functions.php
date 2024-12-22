@@ -105,6 +105,7 @@ function doMirror($repository,$dependency)
 {
     global $config;
 
+    if (!trim($dependency)) exit();
     $repository = $config['repositories'][$repository];
 
     $dependencyUrl = "$repository/$dependency";
