@@ -44,7 +44,7 @@ $config = [
 `repositories`: You can put or remove repositories which you want to get mirrored here (keys are optional and will be used for repository filtering in mirror url)
 
 ### Code Usage:
-To self-host mirror in your own server, just start php server and the server ip or connected domain to ip will be your mirror url.
+To self-host mirror in your own server, just start php server and the source path in public_html will be your mirror url.
 > [!NOTE]
 > Mirror url will be address of source root in your server, for example if you clone source in the x folder, the url will be: `https://your-domain.com/x`
 
