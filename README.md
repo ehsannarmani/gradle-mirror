@@ -9,21 +9,22 @@ Easily just put the mirror url as maven in `settings.gradle` file and re-sync pr
 ```kotlin
 pluginManagement {
     repositories {
-        maven("https://mirror-url")
+        maven("https://en-mirror.ir")
     }
 }
 dependencyResolutionManagement {
     ...
     repositories {
-        maven("https://mirror-url")
+        maven("https://en-mirror.ir")
     }
 }
 ```
-
+> [!NOTE]
+> Clone of mirror is lunched at `en-mirror.ir` and contains `google`,`central` and `jitpack` mavens.
 ### Repository Filtering
 By default, all of repositories will get mirrored, to mirror just specific repository, put the key of repository in the mirror url like this:
 ```kotlin
-maven("https://mirror-url/jitpack")
+maven("https://en-mirror.ir/jitpack")
 ```
 
 ### Code Document:
@@ -60,13 +61,13 @@ To self-host mirror in your own server, just start php server and the source pat
 ```kotlin
 pluginManagement {
     repositories {
-        maven("https://mirror-url")
+        maven("https://en-mirror.ir")
     }
 }
 dependencyResolutionManagement {
     ...
     repositories {
-        maven("https://mirror-url")
+        maven("https://en-mirror.ir")
     }
 }
 ```
@@ -74,7 +75,7 @@ dependencyResolutionManagement {
 ### فیلترکردن مخزن ها
 این میرور بصورت پیشفرض تمامی مخزن های قرارداده شده در فایل کانفیگ را شامل خواهد شد، برای میرور کردن فقط یک مخزن خاص کافی است کلید آن را در انتهای آدرس میرور قرار دهید:
 ```kotlin
-maven("https://mirror-url/jitpack")
+maven("https://en-mirror.ir/jitpack")
 ```
 
 ### توضیحات کد:
