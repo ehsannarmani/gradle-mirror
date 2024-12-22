@@ -20,7 +20,7 @@ dependencyResolutionManagement {
 }
 ```
 > [!NOTE]
-> Clone of mirror is lunched at `en-mirror.ir` and contains `google`,`central` and `jitpack` mavens.
+> Clone of mirror is lunched at `en-mirror.ir` and ready to use. this mirror contains `google`,`central` and `jitpack` mavens.
 ### Repository Filtering
 By default, all of repositories will get mirrored, to mirror just specific repository, put the key of repository in the mirror url like this:
 ```kotlin
