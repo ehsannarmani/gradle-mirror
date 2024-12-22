@@ -4,7 +4,7 @@
 
 ### Usage:
 
-Easily just put the mirror url as maven in `settings.gradle` file and re-sync project:
+Simply add the mirror url as a maven repository in the `settings.gradle` file and re-sync project:
 
 ```kotlin
 pluginManagement {
@@ -20,15 +20,15 @@ dependencyResolutionManagement {
 }
 ```
 > [!NOTE]
-> Clone of mirror is lunched at `en-mirror.ir` and ready to use. this mirror contains `google`,`central` and `jitpack` mavens.
+> Clone of mirror is launched at `en-mirror.ir` and ready to use. this mirror contains `google`,`central` and `jitpack` mavens.
 ### Repository Filtering
-By default, all of repositories will get mirrored, to mirror just specific repository, put the key of repository in the mirror url like this:
+By default, all repositories are mirrored. To mirror only a specific repository, include its key in the mirror URL, like this:
 ```kotlin
 maven("https://en-mirror.ir/jitpack")
 ```
 
 ### Code Document:
-Config your mirror `config.php`:
+Configure your mirror `config.php`:
 ```php
 $config = [
   'cache_folder'=>'cache',
@@ -45,9 +45,9 @@ $config = [
 `repositories`: You can put or remove repositories which you want to get mirrored here (keys are optional and will be used for repository filtering in mirror url)
 
 ### Code Usage:
-To self-host mirror in your own server, just start php server and the source path in public_html will be your mirror url.
+To self-host the mirror on your own server, start the PHP server, and the source path in public_html will serve as your mirror URL.
 > [!NOTE]
-> Mirror url will be address of source root in your server, for example if you clone source in the x folder, the url will be: `https://your-domain.com/x`
+> The mirror URL will be the address of the source root on your server. For example, if you clone the source in the `x` folder, the URL will be: `https://your-domain.com/x`
 
 <br/>
 <hr/>
@@ -73,7 +73,7 @@ dependencyResolutionManagement {
 ```
 
 ### فیلترکردن مخزن ها
-این میرور بصورت پیشفرض تمامی مخزن های قرارداده شده در فایل کانفیگ را شامل خواهد شد، برای میرور کردن فقط یک مخزن خاص کافی است کلید آن را در انتهای آدرس میرور قرار دهید:
+این میرور بصورت پیشفرض تمامی مخزن های قرارداده شده در فایل کانفیگ را شامل خواهد شد، برای میرور کردن فقط یک مخزن خاص کافی است کلید آن را در انتهای آدرس میرور قرار دهید و پروژه خود را سینک کنید:
 ```kotlin
 maven("https://en-mirror.ir/jitpack")
 ```
