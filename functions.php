@@ -4,6 +4,7 @@ require_once "config.php";
 function downloadDependency($url)
 {
     global $config;
+
     $cacheFolderName = $config['cache_folder'];
     $cacheFolder = __DIR__ . "/" . $cacheFolderName;
     $fileName = basename($url);
@@ -62,9 +63,10 @@ function downloadDependency($url)
 
 function returnDependency($dependency)
 {
+    global $config;
+
     $path = $dependency['path'];
     $headers = explode("\n",$dependency['headers']);
-    global $config;
     if (file_exists($path)) {
         foreach ($headers as $header) {
             header($header);
@@ -85,5 +87,30 @@ function returnDependency($dependency)
 function dependencyNotFound()
 {
     http_response_code(404);
-    echo "File not found.";
+    echo "Dependency not found.";
+}
+
+function startsWithArrayItem($target,array $array)
+{
+    $result = false;
+    foreach ($array as $item) {
+        if (strpos($target,$item) === 0){
+            $result = $item;
+        }
+    }
+    return $result;
+}
+
+function doMirror($repository,$dependency)
+{
+    global $config;
+
+    $repository = $config['repositories'][$repository];
+
+    $dependencyUrl = "$repository/$dependency";
+    $downloadedDependency = downloadDependency($dependencyUrl);
+    if ($downloadedDependency){
+        returnDependency($downloadedDependency);
+        exit();
+    }
 }

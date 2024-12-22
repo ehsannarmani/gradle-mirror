@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(E_ERROR);
+
 require_once "functions.php";
 require_once "config.php";
 
@@ -9,12 +11,17 @@ $scriptName = dirname($_SERVER['SCRIPT_NAME']);
 $relativePath = str_replace($scriptName, '', $requestUri);
 $dependencyPath = ltrim($relativePath, '/');
 
-foreach ($config['repositories'] as $repository) {
-    $dependencyUrl = "$repository/$dependencyPath";
-    $downloadedDependency = downloadDependency($dependencyUrl);
-    if ($downloadedDependency){
-        returnDependency($downloadedDependency);
-        exit();
+$repositoriesNames = array_keys($config['repositories']);
+
+$requestedRepositoryName = startsWithArrayItem($dependencyPath,$repositoriesNames);
+
+if ($requestedRepositoryName){
+    // filtered mirror (use specific repository)
+    $dependencyPath = str_replace($requestedRepositoryName.'/','',$dependencyPath);
+    doMirror($requestedRepositoryName,$dependencyPath);
+}else{
+    foreach (array_keys($config['repositories']) as $repository) {
+        doMirror($repository,$dependencyPath);
     }
 }
 dependencyNotFound();
