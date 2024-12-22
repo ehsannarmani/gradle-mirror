@@ -21,7 +21,7 @@ dependencyResolutionManagement {
 ```
 
 ### Repository Filtering
-By default, `google`,`central` and `jitpack` mavens will mirrored, to mirror just specific repositories, put the key of repositories in the mirror url like this:
+By default, all of repositories will get mirrored, to mirror just specific repository, put the key of repository in the mirror url like this:
 ```kotlin
 maven("https://mirror-url/jitpack")
 ```
@@ -51,7 +51,7 @@ To self-host mirror in your own server, just start php server and the server ip 
 <br/>
 <hr/>
 
-#### این میرور جهت دانلود دیپندنسی ها و وابستگی های گردل بدون تداخلات اینترنتی و تحریم ها توسعه داده شده است.
+#### این میرور جهت دانلود دیپندنسی ها و وابستگی های گریدل بدون تداخلات اینترنتی و تحریم ها توسعه داده شده است.
 
 ### نحوه استفاده:
 
@@ -72,7 +72,7 @@ dependencyResolutionManagement {
 ```
 
 ### فیلترکردن مخزن ها
-این میرور بصورت پیشفرض تمامی مخزن های قرارداده شده در فایل کانفیگ را شامل خواهد شد، برای میرور کردن یک مخزن کافی است کلید آن را در انتهای آدرس میرور قرار دهید:
+این میرور بصورت پیشفرض تمامی مخزن های قرارداده شده در فایل کانفیگ را شامل خواهد شد، برای میرور کردن فقط یک مخزن خاص کافی است کلید آن را در انتهای آدرس میرور قرار دهید:
 ```kotlin
 maven("https://mirror-url/jitpack")
 ```
@@ -94,8 +94,8 @@ $config = [
 `cache_folder`: با این مقدار میتوانید پوشه کش دیپدنسی هارا تعیین کنید<br/>
 `repositories`: در این پراپرتی مخازنی که میخواهید میرور شوند را بگذارید یا اگر قصد میرور مخزنی رو ندارید از اینجا حذف کنید. (کلید ها دلخواه هستند و در فیلتر کردن میرور مخزن ها استفاده میشوند)
 
-### Code Usage:
-برای اجرای این میرور در سرور شخصی خودتان یک php server استارت کنید و سورس کد را داخل مسیر public_html قرار دهید، آیپی سرور یا دامنه متصل شده به آن آدرس میرور شما خواهد بود.
+### استفاده از سورس کد:
+برای اجرای این میرور در سرور شخصی خودتان یک php server استارت کنید و سورس کد را داخل مسیر public_html قرار دهید، آیپی سرور یا دامنه متصل شده به آن، آدرس میرور شما خواهد بود.
 > [!NOTE]
 > آدرس میرور، آدرس مسیر روت سورس کد در سرور شما خواهد بود، برای مثال اگر سورس کد را داخل پوشه x قرار دهید، آدرس میرور `https://your-domain.com/x` خواهد بود.
 
