@@ -8,7 +8,12 @@ require_once "config.php";
 $requestUri = $_SERVER['REQUEST_URI'];
 $scriptName = dirname($_SERVER['SCRIPT_NAME']);
 
-$relativePath = str_replace($scriptName, '', $requestUri);
+$relativePath = $requestUri;
+
+if ($scriptName != '/'){
+    $relativePath = str_replace($scriptName, '', $requestUri);
+}
+
 $dependencyPath = ltrim($relativePath, '/');
 
 $repositoriesNames = array_keys($config['repositories']);

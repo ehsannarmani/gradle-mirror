@@ -43,7 +43,7 @@ function downloadDependency($url)
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
     if ($httpCode < 200 || $httpCode > 299){
-        echo "$httpCode for $url <br/>";
+//        echo "$httpCode for $url <br/>";
         return null;
     }
 
