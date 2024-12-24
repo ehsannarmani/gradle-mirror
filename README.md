@@ -49,6 +49,11 @@ To self-host the mirror on your own server, start the PHP server, and the source
 > [!NOTE]
 > The mirror URL will be the address of the source root on your server. For example, if you clone the source in the `x` folder, the URL will be: `https://your-domain.com/x`
 
+
+> [!NOTE]
+> You can set up mirror with cloudflare worker tho, [see](https://github.com/ehsannarmani/gradle-mirror-cloudflare-worker).
+
+
 <br/>
 <hr/>
 
